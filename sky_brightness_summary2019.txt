@@ -1,0 +1,91 @@
+
+Summary of earlier sky brightness measurements and suggestions for 2019
+
+-----
+
+Massey & Foltz 2000 paper
+1988 obs: MMT, Blue Channel, 300 lpmm grating, 
+two 5" diam circular apertures, 300 sec exposure, tracking near zenith (ZD 5 deg)
+
+1998 obs (Berlind) 1.5m + FAST, 300 lpmm grating
+5" slit, 1800 sec exposure
+at zenith and 4 cardinal pounts at zenith dist ~50 deg (eastern at ZD=35 deg)
+actual az/el pairs:
+Zenith=?,85.  N= 0,42.  E=0,56.  S=180,40.  W=270,47.
+
+Davis & Luginbuhl suggestions for directions
+Zenith, ZD=5 deg
+Rosemont
+Benson/Vigneto
+Tucson (use AZ=0, ZD=70,48)
+Nogales (use AZ=180, ZD=70,50)
+
+Bearings (ie azimuth):
+Rosemont  37.6 deg
+Vigneto   67.5 deg
+Tucson   351.9 deg, = -8.1 deg
+Nogales  186.6 deg
+
+----------
+
+Inst Setup 2019
+
+Blue Channel, 300 lpmm grating, CWL 5800 A, no blocking filter
+5" slit, or two 5" diam circles
+also use 1" slit for wavelength calibrations
+
+Calibrations: 
+HeNeAr 1" slit - 30 sec, 300 sec?
+HeNeAr 5" slit - 30 sec only
+BC Flats - 30 sec?
+
+-----
+
+For October 5 2019
+
+Sky positions
+Take all with tracking on
+Take 3 x 180 sec at each position?
+
+In early October, at ~ midnight the Milky Way will be in the
+north and east.  You can likely do the east AZ=90, EL~45 pointing near
+midnight before the MW moves across it, and maybe the north EL-45
+pointing. After that, consider doing the zenith, south and west pointings, 
+and later trying the north, east, and Rosemont/Vigneto (which are both northeast), after the MW has moved somewhat out of the way.  The north 
+low pointing will probably be the first of these to be clear of the MW.
+The NE el=45 pointings may not be clear of the MW until 3:30-4 AM.
+
+
+              AZ      EL      Notes
+Zenith       270      85      (1)
+Rosemont      37.6    45      or EL=42
+Vigneto       67.5    45      or EL=42
+Tucson       351.9    42      EL=42 matches Massey & Foltz
+Nogales      186.6    40      EL=40 matches Massey & Foltz
+East          90      56      EL=56 matches Massey & Foltz
+West         270      47      EL=47 matches Massey & Foltz
+(North         0     ~45)     redundant with Tucson?
+(South       180     ~45)     redundant with Nogales?
+
+You can also try a low elevation of 20 or 30 deg in each direction.
+
+
+Notes: 
+1. suggest doing the near zenith pointing at west AZ=270 rather than east, so you don't track through zenith.
+
+The sky is going to move about 5 deg during a 10 minute series of exposures,
+so in my opinion, it isn't worth worrying over few-degree differences
+in elevation, or the difference in direction between the cardinal points 
+and Tucson or Nogales.
+
+LMST is about 0:30 at midnight and 5:30 at twilight.
+
+Some suggested standard stars, also see
+http://mingus.mmto.arizona.edu/~bjw/mmt/spectro_standards.html
+
+Feige 110    23:19:58.4  -05:09:56   g=11.79   D0p
+GD 50        03:48:50.3  -00:58:35   g=14.04   DA2
+G191-B2B     05:05:30.6  +52:49:50   g=11.74   DA1
+GD 71        05:52:27.7  +15:53:10   g=13.03   DA1
+
+
