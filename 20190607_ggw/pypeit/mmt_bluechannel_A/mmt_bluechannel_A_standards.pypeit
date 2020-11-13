@@ -1,0 +1,34 @@
+# Auto-generated PypeIt file
+# Mon 02 Nov 2020 18:11:35
+
+# User-defined execution parameters
+[rdx]
+  spectrograph = mmt_bluechannel
+
+# Setup
+setup read
+ Setup A:
+   --:
+     binning: 1,2
+     dichroic: Clear/Clear
+     disperser:
+       angle: none
+       name: 300GPM
+     slit:
+       decker: 5.0x180
+       slitlen: none
+       slitwid: none
+setup end
+
+# Read in the data
+data read
+ path ..
+|        filename |                 frametype |                 ra |                 dec |           target | dispname |  decker | binning |                mjd | airmass | exptime |
+| skyobs0001.fits |                  standard |  246.9731666666666 |   9.204083333333333 |          G138-31 |   300GPM | 5.0x180 |     1,2 |  58641.31518518519 |     1.1 |   300.0 |
+| skyobs0002.fits |                  standard |  246.9731666666666 |   9.204083333333333 |          G138-31 |   300GPM | 5.0x180 |     1,2 | 58641.325694444444 |   1.115 |   300.0 |
+| skyobs0056.fits |                  standard | 327.79591666666664 |              28.864 |       bd+28_4211 |   300GPM | 5.0x180 |     1,2 |  58641.46533564815 |    1.03 |     5.0 |
+| skyobs0057.fits |                  standard | 327.79591666666664 |              28.864 |       bd+28_4211 |   300GPM | 5.0x180 |     1,2 |  58641.46703703704 |   1.028 |    15.0 |
+| skyobs0058.fits |                  standard | 327.79591666666664 |              28.864 |       bd+28_4211 |   300GPM | 5.0x180 |     1,2 |  58641.46833333333 |   1.026 |    12.0 |
+| skyobs0059.fits |                  standard | 327.79591666666664 |              28.864 |       bd+28_4211 |   300GPM | 5.0x180 |     1,2 |  58641.46921296296 |   1.025 |    10.0 |
+data end
+

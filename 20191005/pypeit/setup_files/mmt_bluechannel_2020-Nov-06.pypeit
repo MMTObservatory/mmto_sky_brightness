@@ -1,0 +1,12 @@
+# Auto-generated PypeIt file
+# Fri 06 Nov 2020 14:09:11
+
+# User-defined execution parameters
+[rdx]
+    spectrograph = mmt_bluechannel
+
+# Read in the data
+data read
+ ../skyobs*.fits*
+data end
+

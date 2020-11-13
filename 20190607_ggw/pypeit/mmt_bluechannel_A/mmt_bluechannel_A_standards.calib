@@ -1,0 +1,29 @@
+A:
+  --:
+    binning: 1,2
+    dichroic: Clear/Clear
+    disperser:
+      angle: none
+      name: 300GPM
+    slit:
+      decker: 5.0x180
+      slitlen: none
+      slitwid: none
+  1:
+    align: []
+    arc: []
+    bias: []
+    dark: []
+    illumflat: []
+    pinhole: []
+    pixelflat: []
+    science: []
+    standard:
+    - ../skyobs0001.fits
+    - ../skyobs0002.fits
+    - ../skyobs0056.fits
+    - ../skyobs0057.fits
+    - ../skyobs0058.fits
+    - ../skyobs0059.fits
+    tilt: []
+    trace: []

@@ -1,0 +1,10 @@
+# Auto-generated PypeIt file
+# Wed 11 Nov 2020 18:52:46
+
+# User-defined execution parameters
+# This is only an example. Make sure to change the following parameters accordingly.
+[tellfit]
+  objmodel = qso
+  redshift = 0.0
+  bal_wv_min_max = 10000.,11000.
+

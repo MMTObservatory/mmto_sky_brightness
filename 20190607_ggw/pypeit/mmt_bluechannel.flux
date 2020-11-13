@@ -1,0 +1,69 @@
+# Auto-generated PypeIt file
+# Wed 11 Nov 2020 19:00:10
+
+# User-defined execution parameters
+[fluxcalib]
+  extinct_correct = False # Set to True if your SENSFUNC derived with the UVIS algorithm
+
+# Please add your SENSFUNC file name below before running pypeit_flux_calib
+
+# Read in the flux
+flux read
+ Science/spec1d_skyobs0001-G138-31_Blue_Channel_2019Jun07T073352.000.fits Masters/bd_28_4211_sensfunc.fits
+ Science/spec1d_skyobs0002-G138-31_Blue_Channel_2019Jun07T074900.000.fits
+ Science/spec1d_skyobs0003-sky_az90_el85_Blue_Channel_2019Jun07T080223.000.fits
+ Science/spec1d_skyobs0004-sky_az90_el85_Blue_Channel_2019Jun07T080523.000.fits
+ Science/spec1d_skyobs0005-sky_az90_el85_Blue_Channel_2019Jun07T080724.000.fits
+ Science/spec1d_skyobs0006-sky_az90_el85_Blue_Channel_2019Jun07T081105.000.fits
+ Science/spec1d_skyobs0007-sky_az90_el85_Blue_Channel_2019Jun07T081307.000.fits
+ Science/spec1d_skyobs0008-sky_az37.6_el20_Blue_Channel_2019Jun07T081958.000.fits
+ Science/spec1d_skyobs0009-sky_az37.6_el20_Blue_Channel_2019Jun07T082225.000.fits
+ Science/spec1d_skyobs0010-sky_az37.6_el20_Blue_Channel_2019Jun07T082428.000.fits
+ Science/spec1d_skyobs0011-sky_az37.6_el45_Blue_Channel_2019Jun07T082914.000.fits
+ Science/spec1d_skyobs0012-sky_az37.6_el45_Blue_Channel_2019Jun07T083236.000.fits
+ Science/spec1d_skyobs0013-sky_az37.6_el45_Blue_Channel_2019Jun07T083509.000.fits
+ Science/spec1d_skyobs0014-sky_az67.5_el20_Blue_Channel_2019Jun07T083933.000.fits
+ Science/spec1d_skyobs0015-sky_az67.5_el20_Blue_Channel_2019Jun07T084234.000.fits
+ Science/spec1d_skyobs0016-sky_az67.5_el20_Blue_Channel_2019Jun07T084500.000.fits
+ Science/spec1d_skyobs0017-sky_az67.5_el45_Blue_Channel_2019Jun07T084922.000.fits
+ Science/spec1d_skyobs0018-sky_az67.5_el45_Blue_Channel_2019Jun07T085158.000.fits
+ Science/spec1d_skyobs0019-sky_az67.5_el45_Blue_Channel_2019Jun07T085359.000.fits
+ Science/spec1d_skyobs0020-sky_az352_el20_Blue_Channel_2019Jun07T085912.000.fits
+ Science/spec1d_skyobs0021-sky_az352_el20_Blue_Channel_2019Jun07T090156.000.fits
+ Science/spec1d_skyobs0022-sky_az352_el20_Blue_Channel_2019Jun07T090425.000.fits
+ Science/spec1d_skyobs0023-sky_az352_el45_Blue_Channel_2019Jun07T091239.000.fits
+ Science/spec1d_skyobs0024-sky_az352_el45_Blue_Channel_2019Jun07T091538.000.fits
+ Science/spec1d_skyobs0025-sky_az352_el45_Blue_Channel_2019Jun07T091838.000.fits
+ Science/spec1d_skyobs0026-sky_az186.6_el20_Blue_Channel_2019Jun07T092716.000.fits
+ Science/spec1d_skyobs0027-sky_az186.6_el20_Blue_Channel_2019Jun07T093002.000.fits
+ Science/spec1d_skyobs0028-sky_az186.6_el20_Blue_Channel_2019Jun07T093250.000.fits
+ Science/spec1d_skyobs0029-sky_az186.6_el45_Blue_Channel_2019Jun07T093721.000.fits
+ Science/spec1d_skyobs0030-sky_az186.6_el45_Blue_Channel_2019Jun07T093956.000.fits
+ Science/spec1d_skyobs0031-sky_az186.6_el45_Blue_Channel_2019Jun07T094248.000.fits
+ Science/spec1d_skyobs0032-sky_az180_el20_Blue_Channel_2019Jun07T094817.000.fits
+ Science/spec1d_skyobs0033-sky_az180_el20_Blue_Channel_2019Jun07T095135.000.fits
+ Science/spec1d_skyobs0034-sky_az180_el20_Blue_Channel_2019Jun07T095429.000.fits
+ Science/spec1d_skyobs0035-sky_az180_el40_Blue_Channel_2019Jun07T095808.000.fits
+ Science/spec1d_skyobs0036-sky_az180_el40_Blue_Channel_2019Jun07T100150.000.fits
+ Science/spec1d_skyobs0037-sky_az180_el40_Blue_Channel_2019Jun07T100439.000.fits
+ Science/spec1d_skyobs0038-sky_az90_el20_Blue_Channel_2019Jun07T101007.000.fits
+ Science/spec1d_skyobs0039-sky_az90_el20_Blue_Channel_2019Jun07T101244.000.fits
+ Science/spec1d_skyobs0040-sky_az90_el20_Blue_Channel_2019Jun07T101509.000.fits
+ Science/spec1d_skyobs0041-sky_az90_el56_Blue_Channel_2019Jun07T101849.000.fits
+ Science/spec1d_skyobs0042-sky_az90_el56_Blue_Channel_2019Jun07T102115.000.fits
+ Science/spec1d_skyobs0043-sky_az90_el56_Blue_Channel_2019Jun07T102354.000.fits
+ Science/spec1d_skyobs0044-sky_az0_el20_Blue_Channel_2019Jun07T102943.000.fits
+ Science/spec1d_skyobs0045-sky_az0_el20_Blue_Channel_2019Jun07T103221.000.fits
+ Science/spec1d_skyobs0046-sky_az0_el20_Blue_Channel_2019Jun07T103458.000.fits
+ Science/spec1d_skyobs0047-sky_az0_el42_Blue_Channel_2019Jun07T103817.000.fits
+ Science/spec1d_skyobs0048-sky_az0_el42_Blue_Channel_2019Jun07T104108.000.fits
+ Science/spec1d_skyobs0049-sky_az0_el42_Blue_Channel_2019Jun07T104340.000.fits
+ Science/spec1d_skyobs0050-sky_az270_el20_Blue_Channel_2019Jun07T104825.000.fits
+ Science/spec1d_skyobs0051-sky_az270_el20_Blue_Channel_2019Jun07T105106.000.fits
+ Science/spec1d_skyobs0052-sky_az270_el20_Blue_Channel_2019Jun07T105349.000.fits
+ Science/spec1d_skyobs0053-sky_az270_el47_Blue_Channel_2019Jun07T105708.000.fits
+ Science/spec1d_skyobs0054-sky_az270_el47_Blue_Channel_2019Jun07T110022.000.fits
+ Science/spec1d_skyobs0055-sky_az270_el47_Blue_Channel_2019Jun07T110258.000.fits
+ Science/spec1d_skyobs0056-bd+28_4211_Blue_Channel_2019Jun07T111005.000.fits
+flux end
+

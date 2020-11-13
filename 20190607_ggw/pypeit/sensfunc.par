@@ -1,0 +1,41 @@
+[sensfunc]
+    extrap_blu = 0.1
+    extrap_red = 0.1
+    samp_fact = 1.5
+    multi_spec_det = None
+    algorithm = UVIS
+    polyorder = 7
+    star_type = None
+    star_mag = None
+    star_ra = None
+    star_dec = None
+    mask_abs_lines = True
+    [[UVIS]]
+        balm_mask_wid = 5.0
+        std_file = None
+        std_obj_id = None
+        sensfunc = None
+        extinct_correct = True
+        telluric_correct = False
+        telluric = False
+        polycorrect = True
+        polyfunc = True
+        nresln = 20
+        resolution = 3000.0
+        trans_thresh = 0.9
+    [[IR]]
+        telgridfile = /home/tim/MMT/PypeIt/pypeit/data/telluric/TelFit_Paranal_VIS_4900_11100_R25000.fits
+        sn_clip = 30.0
+        resln_guess = None
+        resln_frac_bounds = 0.5, 1.5
+        pix_shift_bounds = -5.0, 5.0
+        maxiter = 3
+        sticky = True
+        lower = 3.0
+        upper = 3.0
+        seed = 777
+        tol = 0.001
+        popsize = 30
+        recombination = 0.7
+        polish = True
+        disp = False
