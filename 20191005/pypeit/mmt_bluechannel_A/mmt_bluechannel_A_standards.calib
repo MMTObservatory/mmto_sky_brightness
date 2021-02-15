@@ -1,14 +1,6 @@
 A:
   --:
-    binning: 1,2
-    dichroic: Clear/Clear
-    disperser:
-      angle: none
-      name: 300GPM
-    slit:
-      decker: 5.0x180
-      slitlen: none
-      slitwid: none
+    dispname: 300GPM
   1:
     align: []
     arc: []
