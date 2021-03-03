@@ -1,18 +1,7 @@
 # PypeIt reduction rules.
 [rdx]
-    # Spectrograph that provided the data to be reduced.  Options are:
-    # keck_deimos, keck_lris_blue, keck_lris_red, keck_lris_red_orig,
-    # keck_lris_blue_orig, keck_nires, keck_nirspec_low, keck_mosfire,
-    # keck_hires_red, keck_kcwi, shane_kast_blue, shane_kast_red,
-    # shane_kast_red_ret, tng_dolores, wht_isis_blue, wht_isis_red,
-    # vlt_xshooter_uvb, vlt_xshooter_vis, vlt_xshooter_nir, vlt_fors2,
-    # gemini_gnirs, gemini_flamingos1, gemini_flamingos2,
-    # gemini_gmos_south_ham, gemini_gmos_north_e2v,
-    # gemini_gmos_north_ham, magellan_fire, magellan_fire_long,
-    # magellan_mage, lbt_mods1r, lbt_mods1b, lbt_mods2r, lbt_mods2b,
-    # lbt_luci1, lbt_luci2, mmt_binospec, mmt_mmirs, mmt_bluechannel,
-    # mdm_osmos_mdm4k, not_alfosc, p200_dbsp_blue, p200_dbsp_red,
-    # p200_tspec
+    # Spectrograph that provided the data to be reduced.  See
+    # :ref:`instruments` for valid options.
     spectrograph = mmt_bluechannel
     # Restrict reduction to a list of detector indices.This cannot (and
     # should not) be used with slitspatnum.
@@ -93,17 +82,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -113,6 +101,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -185,17 +176,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -205,6 +195,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -277,17 +270,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = -1
+            cr_sigrej = -1
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -297,6 +289,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -369,17 +364,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = -1
+            cr_sigrej = -1
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -389,6 +383,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -435,7 +432,7 @@
         # items in the list.  Use None to indicate no limit; i.e., to
         # select exposures with any time greater than 30 sec, use exprng
         # = [30, None].
-        exprng = None, None
+        exprng = None, 100
         # Low level parameters used for basic image processing
         [[[process]]]
             # Trim the image to the detector supplied region
@@ -461,17 +458,16 @@
             satpix = nothing
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -481,6 +477,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -553,17 +552,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -573,6 +571,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -645,17 +646,16 @@
             satpix = nothing
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = -1
+            cr_sigrej = -1
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -665,6 +665,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -728,7 +731,7 @@
         # items in the list.  Use None to indicate no limit; i.e., to
         # select exposures with any time greater than 30 sec, use exprng
         # = [30, None].
-        exprng = None, None
+        exprng = None, 100
         # Low level parameters used for basic image processing
         [[[process]]]
             # Trim the image to the detector supplied region
@@ -754,17 +757,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -774,6 +776,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -820,7 +825,7 @@
         # items in the list.  Use None to indicate no limit; i.e., to
         # select exposures with any time greater than 30 sec, use exprng
         # = [30, None].
-        exprng = None, None
+        exprng = 30, None
         # Low level parameters used for basic image processing
         [[[process]]]
             # Trim the image to the detector supplied region
@@ -846,17 +851,16 @@
             satpix = nothing
             # Identify CRs and mask them
             mask_cr = False
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -866,6 +870,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -939,17 +946,16 @@
             satpix = reject
             # Identify CRs and mask them
             mask_cr = True
+            # Perform sigma clipping when combining.  Only used with
+            # combine=weightmean
+            clip = True
             # Sigma level to reject cosmic rays (<= 0.0 means no CR
             # removal)
-            sigrej = 20.0
+            cr_sigrej = 20.0
             # Number of pixels to reject at the lowest and highest ends
             # of the distribution; i.e., n_lohi = low, high.  Use None
             # for no limit.
             n_lohi = 0, 0
-            # Sigma-clipping level at the low and high ends of the
-            # distribution; i.e., sig_lohi = low, high.  Use None for no
-            # limit.
-            sig_lohi = 3.0, 3.0
             # If all pixels are rejected, replace them using this
             # method.  Options are: min, max, mean, median, weightmean,
             # maxnonsat
@@ -959,6 +965,9 @@
             # Factor by which to expand regions with cosmic rays
             # detected by the LA cosmics routine.
             grow = 1.5
+            # Sigma-clipping level for when clip=True; Use None for
+            # automatic limit (recommended).
+            comb_sigrej = None
             # Remove compact detections in LA cosmics routine
             rmcompact = True
             # Sigma level for rejection in LA cosmics routine
@@ -1418,22 +1427,6 @@
         # Number of sigma for sigma-clipping rejection during slit-mask
         # design matching.
         maskdesign_sigrej = 3
-        # Maximum number of fit iterations to perform for registering
-        # slit-mask design and trace locations. If None, rejection
-        # iterations are performed until no points are rejected. If 1,
-        # only a single fit is performed without any rejection.
-        mask_reg_maxiter = None
-        # Maximum allowed separation between the calibrated coordinates
-        # of the designed slit position in pixels and the matched trace.
-        # If None, rejection is done iteratively using sigma clipping.
-        # See mask_reg_sigrej.
-        mask_reg_maxsep = None
-        # Number of sigma for sigma-clipping during rejection iterations
-        # during the slit-mask design registration. If None, uses
-        # default set by `astropy.stats.sigma_clipped_stats`.
-        mask_reg_sigrej = 5
-        # Ignore any slit-mask designs identified as alignment slits.
-        ignore_alignment = False
         # Integer number of pixels to consider beyond the slit edges
         # when selecting pixels that are 'on' the slit.
         pad = 0
@@ -1530,7 +1523,7 @@
     # the list.  Use None to indicate no limit; i.e., to select
     # exposures with any time greater than 30 sec, use exprng = [30,
     # None].
-    exprng = 10, None
+    exprng = None, None
     # Low level parameters used for basic image processing
     [[process]]
         # Trim the image to the detector supplied region
@@ -1555,16 +1548,15 @@
         satpix = reject
         # Identify CRs and mask them
         mask_cr = True
+        # Perform sigma clipping when combining.  Only used with
+        # combine=weightmean
+        clip = True
         # Sigma level to reject cosmic rays (<= 0.0 means no CR removal)
-        sigrej = 20.0
+        cr_sigrej = 20.0
         # Number of pixels to reject at the lowest and highest ends of
         # the distribution; i.e., n_lohi = low, high.  Use None for no
         # limit.
         n_lohi = 0, 0
-        # Sigma-clipping level at the low and high ends of the
-        # distribution; i.e., sig_lohi = low, high.  Use None for no
-        # limit.
-        sig_lohi = 3.0, 3.0
         # If all pixels are rejected, replace them using this method.
         # Options are: min, max, mean, median, weightmean, maxnonsat
         replace = maxnonsat
@@ -1573,6 +1565,9 @@
         # Factor by which to expand regions with cosmic rays detected by
         # the LA cosmics routine.
         grow = 1.5
+        # Sigma-clipping level for when clip=True; Use None for
+        # automatic limit (recommended).
+        comb_sigrej = None
         # Remove compact detections in LA cosmics routine
         rmcompact = True
         # Sigma level for rejection in LA cosmics routine
@@ -1745,22 +1740,74 @@
         # True.If the data uses fibres for all spaxels, set this to
         # False.
         slit_spec = True
-        # Set this to False if you do not wish to generate a data cube.
-        make_cube = True
-        # Number of pixels in the spatial dimension. If None, the number
-        # ofpixels in the spatial direction of the slit will be used. If
-        # youare reducing fibre IFU data, this parameter will be ignored
-        cube_spat_num = None
-        # Number of pixels in the wavelength dimension. If None, the
-        # numberof pixels in the spectral direction on the raw science
-        # frame willbe used.
-        cube_wave_num = None
-        # Minimum wavelength to use. If None, default is minimum
-        # wavelengthbased on wavelength solution of all spaxels
-        cube_wave_min = None
-        # Maximum wavelength to use. If None, default is maximum
-        # wavelengthbased on wavelength solution of all spaxels
-        cube_wave_max = None
+        # If set to True, the combined frames will use a relative
+        # weighting scheme.This only works well if there is a common
+        # continuum source in the field ofview of all input
+        # observations, and is generally only required if highrelative
+        # precision is desired.
+        relative_weights = False
+        # If set to True, the input frames will be combined. Otherwise,
+        # a separatedatacube will be generated for each input spec2d
+        # file.
+        combine = True
+        # Output filename of the combined datacube.
+        output_filename = datacube.fits
+        # Filename of a standard star datacube. This cube will be used
+        # to correctthe relative scales of the slits, and to flux
+        # calibrate the sciencedatacube.
+        standard_cube = None
+        # Flux calibrate the data? If True, you must also provide a
+        # standard starcube using the standard_cube parameter.
+        flux_calibrate = False
+        # White light image of a previously combined datacube. The white
+        # lightimage will be used as a reference when calculating the
+        # offsets of theinput spec2d files.
+        reference_image = None
+        # Save a white light image of the combined datacube. The output
+        # filenamewill be given by the "output_filename" variable with a
+        # suffix "_whitelight".Note that the white light image collapses
+        # the flux along the wavelength axis,so some spaxels in the 2D
+        # white light image may have different wavelengthranges.
+        save_whitelight = False
+        # Minimum RA to use when generating the WCS. If None, the
+        # default is minimum RAbased on the WCS of all spaxels. Units
+        # should be degrees.
+        ra_min = None
+        # Maximum RA to use when generating the WCS. If None, the
+        # default is maximum RAbased on the WCS of all spaxels. Units
+        # should be degrees.
+        ra_max = None
+        # Minimum DEC to use when generating the WCS. If None, the
+        # default is minimum DECbased on the WCS of all spaxels. Units
+        # should be degrees.
+        dec_min = None
+        # Maximum DEC to use when generating the WCS. If None, the
+        # default is maximum DECbased on the WCS of all spaxels. Units
+        # should be degrees.
+        dec_max = None
+        # Minimum wavelength to use when generating the WCS. If None,
+        # the default isminimum wavelength based on the WCS of all
+        # spaxels. Units should be Angstroms.
+        wave_min = None
+        # Maximum wavelength to use when generating the WCS. If None,
+        # the default ismaximum wavelength based on the WCS of all
+        # spaxels. Units should be Angstroms.
+        wave_max = None
+        # The spatial size of each spaxel to use when generating the WCS
+        # (in arcsec).If None, the default is set by the spectrograph
+        # file.
+        spatial_delta = None
+        # The wavelength step to use when generating the WCS (in
+        # Angstroms).If None, the default is set by the wavelength
+        # solution.
+        wave_delta = None
+    # Parameters for slitmask
+    [[slitmask]]
+        # Tolerance (arcsec) to match source to targeted object
+        obj_toler = 5.0
+        # If SlitMask object was generated, assign RA,DEC,name to
+        # objects
+        assign_obj = False
 # Parameters used by the flexure-correction procedure.  Flexure
 # corrections are not performed by default.  To turn on, either set the
 # parameters in the 'flexure' parameter group or set 'flexure = True' in
@@ -1775,7 +1822,7 @@
     # Maximum allowed spectral flexure shift in pixels.
     spec_maxshift = 20
     # Archive sky spectrum to be used for the flexure correction.
-    spectrum = /home/tim/MMT/PypeIt/pypeit/data/sky_spec/paranal_sky.fits
+    spectrum = /home/tim/conda/envs/pypeit_release/lib/python3.8/site-packages/pypeit/data/sky_spec/paranal_sky.fits
 # Parameters used by the flux-calibration procedure.  Flux calibration
 # is not performed by default.  To turn on, either set the parameters in
 # the 'fluxcalib' parameter group or set 'fluxcalib = True' in the 'rdx'
@@ -1961,7 +2008,7 @@
         trans_thresh = 0.9
     # Parameters for the IR sensfunc algorithm
     [[IR]]
-        telgridfile = /home/tim/MMT/PypeIt/pypeit/data/telluric/TelFit_Paranal_VIS_4900_11100_R25000.fits
+        telgridfile = None
         sn_clip = 30.0
         resln_guess = None
         resln_frac_bounds = 0.5, 1.5
@@ -1986,7 +2033,7 @@
     # variable redshift range during the fit
     delta_redshift = 0.1
     # pca pickle file. needed when you use qso_telluric
-    pca_file = /home/tim/MMT/PypeIt/pypeit/data/telluric/qso_pca_1200_3100.pckl
+    pca_file = /home/tim/conda/envs/pypeit_release/lib/python3.8/site-packages/pypeit/data/telluric/qso_pca_1200_3100.pckl
     # Number of pca
     npca = 8
     # Min/max wavelength of broad absorption features. If there are
